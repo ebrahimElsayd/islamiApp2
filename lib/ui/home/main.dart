@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp2/ui/home/chapterDetailsScreen/chaperDetailsScreeen.dart';
+import 'package:islamiapp2/ui/home/hadithDetailsScreen/hadithDetailsScreen.dart';
 import 'package:islamiapp2/ui/home/homescreen.dart';
 
 void main() {
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routName: (context) => HomeScreen(),
         ChapterDetailsScreen.routName: (context) => ChapterDetailsScreen(),
+        HadithDetailsScreen.routName: (context) => HadithDetailsScreen(),
       },
       initialRoute: HomeScreen.routName,
       debugShowCheckedModeBanner: false,

@@ -17,7 +17,7 @@ class ChapterTitileWidget extends StatelessWidget {
       child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(8),
-          // margin: EdgeInsets.all(8),
+          // margin: EdgeInsets.all(8),chapterTitleWidget.dart
 
           child: Text(
             title,
