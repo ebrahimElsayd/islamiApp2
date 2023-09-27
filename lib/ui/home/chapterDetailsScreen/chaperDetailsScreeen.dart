@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamiapp2/ui/home/chapterDetailsScreen/versesWidget.dart';
+import 'package:islamiapp2/ui/themeData/themeData.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routName = 'ChapterDetails';
@@ -21,7 +22,9 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/images/background_screen.png',
+                  MyThemeData.isDarkEnabled
+                      ? 'assets/images/background_screen_dark.png'
+                      : 'assets/images/background_screen.png',
                 ),
                 fit: BoxFit.fill)),
         child: Scaffold(
@@ -38,7 +41,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
                         return VersesWidget(verses[index], index);
                       },
                       separatorBuilder: (context, index) => Container(
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).dividerColor,
                         width: double.infinity,
                         height: 2,
                         margin: EdgeInsets.symmetric(horizontal: 64),

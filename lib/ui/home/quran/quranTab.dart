@@ -125,13 +125,17 @@ class QuranTab extends StatelessWidget {
     return Column(
       children: [
         Expanded(flex: 1, child: Image.asset('assets/images/quranimage.png')),
+        Text(
+          'chapter name',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         Expanded(
           flex: 3,
           child: ListView.separated(
               itemBuilder: (context, index) =>
                   ChapterTitileWidget(allSurah[index], index),
               separatorBuilder: (context, index) => Container(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).dividerColor,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),

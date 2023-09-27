@@ -16,7 +16,7 @@ class _HadithTabState extends State<HadithTab> {
   Widget build(BuildContext context) {
     if (allHadith.isEmpty) {
       loadFile();
-    }
+ }
     return Column(
       children: [
         Expanded(
@@ -27,11 +27,9 @@ class _HadithTabState extends State<HadithTab> {
             decoration: BoxDecoration(
                 border: Border.symmetric(
                     horizontal:
-                        BorderSide(color: Theme.of(context).primaryColor))),
-            child: Text(
-              "الاحاديث",
-              style: TextStyle(fontSize: 24),
-            )),
+                        BorderSide(color: Theme.of(context).dividerColor))),
+            child: Text("الاحاديث",
+                style: Theme.of(context).textTheme.headlineSmall)),
         Expanded(
           flex: 3,
           child: allHadith.isEmpty
@@ -42,7 +40,7 @@ class _HadithTabState extends State<HadithTab> {
                   },
                   separatorBuilder: (context, index) {
                     return Container(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).dividerColor,
                       width: double.infinity,
                       height: 2,
                       margin: EdgeInsets.symmetric(horizontal: 64),

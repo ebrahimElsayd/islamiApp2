@@ -3,6 +3,9 @@ import 'package:islamiapp2/ui/home/hadeth/hadethTab.dart';
 import 'package:islamiapp2/ui/home/quran/quranTab.dart';
 import 'package:islamiapp2/ui/home/radio/radioTab.dart';
 import 'package:islamiapp2/ui/home/sebha/sebhaTab.dart';
+import 'package:islamiapp2/ui/home/seetingTab/settingTab.dart';
+
+import '../themeData/themeData.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routName = 'home';
@@ -21,7 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                'assets/images/background_screen.png',
+                MyThemeData.isDarkEnabled
+                    ? 'assets/images/background_screen_dark.png'
+                    : 'assets/images/background_screen.png',
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
@@ -50,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(
-                    AssetImage("assets/images/ic_radio.png"),
+                    AssetImage("assets/images/ic_hadith.png"),
                   ),
                   label: "hadith"),
               BottomNavigationBarItem(
@@ -59,11 +64,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     AssetImage("assets/images/ic_quran.png"),
                   ),
                   label: "radio"),
+              BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  icon: Icon(Icons.settings),
+                  label: "Setting"),
             ]),
         body: allTabs[selectedTabIndex],
       ),
     );
   }
 
-  List<Widget> allTabs = [RadioTab(), SebhaTab(), HadithTab(), QuranTab()];
+  List<Widget> allTabs = [
+    RadioTab(),
+    SebhaTab(),
+    HadithTab(),
+    QuranTab(),
+    Settingtab()
+  ];
 }

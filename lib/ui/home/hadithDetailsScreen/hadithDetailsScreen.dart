@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp2/ui/home/hadeth/hadethData.dart';
+import 'package:islamiapp2/ui/themeData/themeData.dart';
 
 class HadithDetailsScreen extends StatelessWidget {
   static const String routName = 'hadith_tab';
@@ -13,7 +14,9 @@ class HadithDetailsScreen extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/images/background_screen.png',
+                  MyThemeData.isDarkEnabled
+                      ? 'assets/images/background_screen_dark.png'
+                      : 'assets/images/background_screen.png',
                 ),
                 fit: BoxFit.fill)),
         child: Scaffold(
